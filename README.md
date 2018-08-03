@@ -15,6 +15,8 @@ The launch banner is designed for AliPay,  do you like it ?
   
     尽快的返回可用的payment type
     
+    GET   http://localhost:8080/payment/types#
+    
     
    Key results
    
