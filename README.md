@@ -41,7 +41,7 @@ The launch banner is designed for AliPay,  do you like it ?
    
    GET   http://localhost:8080/payment/types#
    
-## Roadmap to enhance the performance
+## Roadmap to enhance the project
 
    1) To achieve better response speed, cache should be utilized
       Either through redis or memcache,  the disable & enable actions should be broadcase to update the cache 
