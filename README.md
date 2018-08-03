@@ -1,7 +1,7 @@
 # PaymentService
 
 The launch banner is designed for AliPay,  do you like it ?
-![Colored Banner](https://raw.githubusercontent.com/djkpengjun/RPNCalculatorService/master/images/banner_airwallex.png)
+![Colored Banner](https://raw.githubusercontent.com/djkpengjun/PaymentService/master/alipay.png)
 
 ## OKR
    
@@ -22,3 +22,18 @@ The launch banner is designed for AliPay,  do you like it ?
    2) Payment cache and update with 
    3) Swagger API doc / Dockerfile
    4) Make API request asynchronous which introduced by Sprint 4.2 & servlet 3
+   
+   
+## How to build and run
+   
+   mvn clean package
+   
+   ./target/service-payment-server-0.0.1-SNAPSHOT.jar
+   
+   
+   
+   PUT   http://localhost:8080/payment/types/BALANCE_PAY/action/disable
+   
+   PUT   http://localhost:8080/payment/types/BALANCE_PAY/action/enable
+   
+   GET   http://localhost:8080/payment/types#
