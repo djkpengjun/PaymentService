@@ -44,11 +44,11 @@ The launch banner is designed for AliPay,  do you like it ?
 ## Roadmap to enhance the project
 
    1) To achieve better response speed, cache should be utilized
-      Either through redis or memcache,  the disable & enable actions should be broadcase to update the cache 
+      either through redis or memcache,  the disable & enable update should be broadcast to the persistent cache 
       
    2) deployment file need to be defined for kubernetes integration
    
-   3) Spring WebFlux should be used since it uses neety under the hood to support larger volume of requests
+   3) Spring WebFlux should be used since it uses netty under the hood to support larger volume of requests
 
    4) Spring Cache annotaion needs to be integrated with sprint redis
    
