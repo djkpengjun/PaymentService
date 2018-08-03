@@ -20,10 +20,12 @@ The launch banner is designed for AliPay,  do you like it ?
     
    Key results
    
-   1) Payment service interface defined and implemented based on java 8
-   2) Payment cache and update with 
+   1) Payment service interface defined and implemented based on java 8 parallel stream
+   2) Payment cache and update integrated but need more time to polish 
    3) Swagger API doc / Dockerfile
    4) Make API request asynchronous which introduced by Sprint 4.2 & servlet 3
+   5) Unit test is added for key business logic
+   6) Logging for disabled payment types with detailed error code
    
    
 ## How to build and run
@@ -33,9 +35,21 @@ The launch banner is designed for AliPay,  do you like it ?
    ./target/service-payment-server-0.0.1-SNAPSHOT.jar
    
    
-   
    PUT   http://localhost:8080/payment/types/BALANCE_PAY/action/disable
    
    PUT   http://localhost:8080/payment/types/BALANCE_PAY/action/enable
    
    GET   http://localhost:8080/payment/types#
+   
+## Roadmap to enhance the performance
+
+   1) To achieve better response speed, cache should be utilized
+      Either through redis or memcache,  the disable & enable actions should be broadcase to update the cache 
+      
+   2) deployment file need to be defined for kubernetes integration
+   
+   3) Spring WebFlux should be used since it uses neety under the hood to support larger volume of requests
+
+   4) Spring Cache annotaion needs to be integrated with sprint redis
+   
+      https://www.journaldev.com/18141/spring-boot-redis-cache
