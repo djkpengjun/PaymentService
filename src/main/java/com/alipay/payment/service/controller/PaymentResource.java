@@ -18,13 +18,13 @@ public interface PaymentResource {
     @GetMapping("/types")
     public CompletableFuture<List<PaymentType>> getEnabledPaymentTypes();
 
-    @PutMapping("types/{type}/action/{action}")
-    public default void disable(@NotNull @PathVariable("paymentType") PaymentType paymentType) {
+    @PutMapping("types/{type}/action/disable")
+    public default void disable(@NotNull @PathVariable("type") PaymentType paymentType) {
         paymentType.getPaymentRemoteSerivceStub().disable();
     }
 
     @PutMapping("types/{type}/action/enable")
-    public default void enable(@NotNull @PathVariable("paymentType") PaymentType paymentType) {
+    public default void enable(@NotNull @PathVariable("type") PaymentType paymentType) {
         paymentType.getPaymentRemoteSerivceStub().enable();
     }
 }

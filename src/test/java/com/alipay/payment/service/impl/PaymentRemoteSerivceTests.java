@@ -24,5 +24,31 @@ public class PaymentRemoteSerivceTests {
         assertThat(service.isEnabled(PaymentType.BALANCE_PAY.toString()).getIsEnable()).isTrue();
     }
 
-  
+    @Test
+    public void testEnableCouponPay() {
+        PaymentRemoteSerivce service = new PaymentRemoteSerivce();
+        PaymentType.COUPON_PAY.getPaymentRemoteSerivceStub().disable();
+        assertThat(service.isEnabled(PaymentType.COUPON_PAY.toString()).getIsEnable()).isFalse();
+        PaymentType.COUPON_PAY.getPaymentRemoteSerivceStub().enable();;
+        assertThat(service.isEnabled(PaymentType.COUPON_PAY.toString()).getIsEnable()).isTrue();
+    }
+
+    @Test
+    public void testEnableLaiSeePay() {
+        PaymentRemoteSerivce service = new PaymentRemoteSerivce();
+        PaymentType.LAISEE_PAY.getPaymentRemoteSerivceStub().disable();
+        assertThat(service.isEnabled(PaymentType.LAISEE_PAY.toString()).getIsEnable()).isFalse();
+        PaymentType.LAISEE_PAY.getPaymentRemoteSerivceStub().enable();;
+        assertThat(service.isEnabled(PaymentType.LAISEE_PAY.toString()).getIsEnable()).isTrue();
+    }
+
+    @Test
+    public void testEnableCoucherPay() {
+        PaymentRemoteSerivce service = new PaymentRemoteSerivce();
+        PaymentType.VOUCHER_PAY.getPaymentRemoteSerivceStub().disable();
+        assertThat(service.isEnabled(PaymentType.VOUCHER_PAY.toString()).getIsEnable()).isFalse();
+        PaymentType.VOUCHER_PAY.getPaymentRemoteSerivceStub().enable();;
+        assertThat(service.isEnabled(PaymentType.VOUCHER_PAY.toString()).getIsEnable()).isTrue();
+    }
+
 }
